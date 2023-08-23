@@ -53,6 +53,8 @@ object ScannerInput {
         } while (true)
     }
 
+
+
     /**
      * Read a line of text from the user.  There is no validation done on the entered data.
      *
@@ -64,6 +66,8 @@ object ScannerInput {
         print(prompt)
         return Scanner(System.`in`).nextLine()
     }
+
+
 
     /**
      * Read a single character of text from the user.  There is no validation done on the entered data.
