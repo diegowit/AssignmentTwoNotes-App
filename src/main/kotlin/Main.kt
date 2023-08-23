@@ -1,3 +1,12 @@
+import controllers.NoteAPI
+import models.Note
+import mu.KotlinLogging
+import persistence.JSONSerializer
+import utils.CategoryUtility
+import utils.ValidateInput.readValidCategory
+import utils.ValidateInput.readValidPriority
+import java.io.File
+import java.lang.System.exit
 import utils.ScannerInput
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
@@ -42,4 +51,20 @@ fun runMenu() {
             else -> println("Invalid option entered: ${option}")
         }
     } while (true)
+}
+
+
+
+fun addNote(){
+
+    val noteTitle = readNextLine("Enter a title for the note: ")
+    val notePriority = readValidPriority("Enter a priority (1-low, 2, 3, 4, 5-high): ")
+    val noteCategory = readValidCategory("Enter a category for the note from ${CategoryUtility.categories}: ")
+    val isAdded = noteAPI.add(Note(noteTitle, notePriority, noteCategory, false))
+
+    if (isAdded) {
+        println("Added Successfully")
+    } else {
+        println("Add Failed")
+    }
 }
