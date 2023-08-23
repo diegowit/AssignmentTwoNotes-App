@@ -68,3 +68,8 @@ fun addNote(){
         println("Add Failed")
     }
 }
+
+
+fun listAllNotes() {
+    println(noteAPI.listAllNotes())
+}
