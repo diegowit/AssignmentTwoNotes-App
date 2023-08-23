@@ -176,3 +176,23 @@ fun searchNotes() {
     }
 }
 
+fun save() {
+    try {
+        noteAPI.store()
+    } catch (e: Exception) {
+        System.err.println("Error writing to file: $e")
+    }
+}
+
+fun load() {
+    try {
+        noteAPI.load()
+    } catch (e: Exception) {
+        System.err.println("Error reading from file: $e")
+    }
+}
+
+fun exitApp(){
+    logger.info { "exitApp() function invoked" }
+    exit(0)
+}
