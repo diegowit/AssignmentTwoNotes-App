@@ -1,10 +1,10 @@
-import controllers.NoteAPI
-import models.Note
+// import controllers.NoteAPI
+// import models.Note
 import mu.KotlinLogging
-import persistence.JSONSerializer
-import utils.CategoryUtility
-import utils.ValidateInput.readValidCategory
-import utils.ValidateInput.readValidPriority
+// import persistence.JSONSerializer
+// import utils.CategoryUtility
+// import utils.ValidateInput.readValidCategory
+// import utils.ValidateInput.readValidPriority
 import java.io.File
 import java.lang.System.exit
 import utils.ScannerInput
@@ -97,4 +97,12 @@ fun listNotes(){
 
 fun listAllNotes() {
     println(noteAPI.listAllNotes())
+}
+
+fun listActiveNotes() {
+    println(noteAPI.listActiveNotes())
+}
+
+fun listArchivedNotes() {
+    println(noteAPI.listArchivedNotes())
 }
