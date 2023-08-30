@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.0"
     application
@@ -10,6 +11,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     testImplementation(kotlin("test"))
     // dependencies for logging
@@ -19,7 +21,6 @@ dependencies {
     implementation("com.thoughtworks.xstream:xstream:1.4.18")
     implementation("org.codehaus.jettison:jettison:1.4.1")
 }
-
 tasks.test {
     useJUnitPlatform()
 }
@@ -30,4 +31,8 @@ kotlin {
 
 application {
     mainClass.set("MainKt")
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
 }

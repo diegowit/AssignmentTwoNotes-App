@@ -1,15 +1,20 @@
-// import controllers.NoteAPI
-// import models.Note
+import controllers.NoteAPI
+import models.Note
 import mu.KotlinLogging
-// import persistence.JSONSerializer
-// import utils.CategoryUtility
-// import utils.ValidateInput.readValidCategory
-// import utils.ValidateInput.readValidPriority
-import java.io.File
-import java.lang.System.exit
+import persistence.JSONSerializer
+import utils.CategoryUtility
 import utils.ScannerInput
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
+import utils.ValidateInput.readValidCategory
+import utils.ValidateInput.readValidPriority
+import java.io.File
+import java.lang.System.exit
+
+private val logger = KotlinLogging.logger {}
+//private val noteAPI = NoteAPI(XMLSerializer(File("notes.xml")))
+private val noteAPI = NoteAPI(JSONSerializer(File("notes.json")))
+
 fun main(args: Array<String>) {
     runMenu()
 }
@@ -196,3 +201,4 @@ fun exitApp(){
     logger.info { "exitApp() function invoked" }
     exit(0)
 }
+
