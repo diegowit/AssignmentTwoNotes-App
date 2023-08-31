@@ -8,6 +8,8 @@ import persistence.XMLSerializer
 import java.io.File
 import kotlin.test.assertEquals
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class NoteAPITest {
 
     private var learnKotlin: Note? = null
